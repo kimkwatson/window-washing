@@ -22,6 +22,8 @@ h1 {
 h2 {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
+    font-size: 1.25rem;
+    width: 400px;
 }
 
 a {

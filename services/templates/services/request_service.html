@@ -14,15 +14,21 @@
         <div>
             <form id="request-form" method="POST">
                 {% csrf_token %}
+                {{ form.non_field_errors }}
                 <label for="fname">First name:</label>
+                {{ form.fname.errors }}
                 <input type="text" id="fname" name="fname">
                 <label for="lname">Last name:</label>
+                {{ form.lname.errors }}
                 <input type="text" id="lname" name="lname">
                 <label for="email">Email:</label>
+                {{ form.email.errors }}
                 <input type="email" id="email" name="email">
                 <label for="phone">Phone:</label>
+                {{ form.phone.errors }}
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" inputmode="numeric">
                 <label for="address">Address:</label>
+                {{ form.address.errors }}
                     <div class="address-block">
                         <input id="street" type="text" id="address" name="address" placeholder="street" autocomplete="street-address">
                         <input id="apt" type="text" id="apt" name="apt" placeholder="apt no." autocomplete="address-line2">
@@ -33,17 +39,19 @@
                 <label for="windows">Number of windows: </label><span id="window-count">10</span>
                 <input type="range" id="windows" name="windows" min="5" max="50" value="10">
                 <label>Service:</label>
+                {{ form.service.errors }}
                     <div class="radio-group">
-                        <input type="radio" id="inside" name="service" value="inside">
+                        <input type="radio" id="inside" name="service" value="Inside">
                         <label for="inside">inside</label>
 
-                        <input type="radio" id="outside" name="service" value="outside">
+                        <input type="radio" id="outside" name="service" value="Outside">
                         <label for="outside">outside</label>
 
                         <input type="radio" id="both" name="service" value="both">
                         <label for="both">both</label>
                     </div>
                 <label for="day">Preferred date:</label>
+                {{ form.day.errors }}
                 <input type="date" id="day" name="day" min="2026-05-1" max="2026-8-31">
                 <label for="notes">Notes: (i.e. outdoor pets, hazards)</label>
                 <textarea name="notes" rows="4"></textarea>

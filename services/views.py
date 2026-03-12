@@ -1,4 +1,11 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return HttpResponse("Window Washing Service App")
+    return render(request, 'services/home.html')
+
+def request_service(request):
+    if request.method == 'POST':
+        name = request.POST.get('fname')
+        return render(request, 'services/confirmation.html', {'name': name})
+    
+    return render(request, 'services/request_service.html')

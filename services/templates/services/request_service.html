@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Window Washing Service</title>
+    <link rel="stylesheet" href="{% static 'services/styles.css' %}">
+</head>
+<body>
+    <main>
+
+        <h1>Window Washing Service</h1>
+        <h2>Please fill out the information below to request a service</h2>
+        
+        <div>
+            <form id="request-form" method="POST">
+                {% csrf_token %}
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname">
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" inputmode="numeric">
+                <label for="address">Address:</label>
+                    <div class="address-block">
+                        <input id="street" type="text" id="address" name="address" placeholder="street" autocomplete="street-address">
+                        <input id="apt" type="text" id="apt" name="apt" placeholder="apt no." autocomplete="address-line2">
+                        <input id="city" type="text" id="city" name="city" placeholder="city" autocomplete="address-level2">
+                        <input id="state" type="text" id="state" name="state" placeholder="state" autocomplete="address-level1">
+                        <input id="zip" type="text" id="zip" name="zip" placeholder="zip code" autocomplete="postal-code">
+                    </div>
+                <label for="windows">Number of windows: </label><span id="window-count">10</span>
+                <input type="range" id="windows" name="windows" min="5" max="50" value="10">
+                <label>Service:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="inside" name="service" value="inside">
+                        <label for="inside">inside</label>
+
+                        <input type="radio" id="outside" name="service" value="outside">
+                        <label for="outside">outside</label>
+
+                        <input type="radio" id="both" name="service" value="both">
+                        <label for="both">both</label>
+                    </div>
+                <label for="day">Preferred date:</label>
+                <input type="date" id="day" name="day" min="2026-05-1" max="2026-8-31">
+                <label for="notes">Notes: (i.e. outdoor pets, hazards)</label>
+                <textarea name="notes" rows="4"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <p><a href="{% url 'home' %}">Back to Home</a></p>
+
+    </main>
+
+    <script>
+        const phoneInput = document.getElementById("phone");
+
+        phoneInput.addEventListener("input", function(e) {
+            let numbers = e.target.value.replace(/\D/g, ""); // remove non-numbers
+
+            if (numbers.length > 10) numbers = numbers.slice(0,10);
+
+            if (numbers.length > 6) {
+                numbers = numbers.replace(/(\d{3})(\d{3})(\d+)/, "$1-$2-$3");
+            } else if (numbers.length > 3) {
+                numbers = numbers.replace(/(\d{3})(\d+)/, "$1-$2");
+            }
+
+            e.target.value = numbers;
+        });
+    </script>
+
+    <script>
+        const slider = document.getElementById("windows");
+        const output = document.getElementById("window-count");
+
+        output.textContent = slider.value;
+
+        slider.oninput = function() {
+            output.textContent = this.value;
+        }
+    </script>
+
+</body>
+</html>

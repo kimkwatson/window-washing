@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Submitted</title>
+    <link rel="stylesheet" href="{% static 'services/styles.css' %}">
+</head>
+<body>
+
+    <h1>Request Submitted</h1>
+
+    <p>Thank you, {{ name }}. Your service request has been received. A confirmation email has been sent.</p>
+
+    <p><a href="{% url 'home' %}">Return to Home</a></p>
+
+</body>
+</html>

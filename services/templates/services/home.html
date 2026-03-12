@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Washing Service Request</title>
+    <link rel="stylesheet" href="{% static 'services/styles.css' %}">
+</head>
+<body>
+    <h1>Window Washing Service Request</h1>
+    <p>Submit a request for residential window cleaning services.</p>
+
+    <p><a href="{% url 'request_service' %}">Request Service</a></p>
+    
+</body>
+</html>

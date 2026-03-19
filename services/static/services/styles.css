@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 40px;
+    margin: 0 auto;
     min-height: 100vh;
     background: linear-gradient(15deg, #444, whitesmoke, white, #e7f5fb, #87ceeb);
     background-repeat: no-repeat;
@@ -214,4 +214,29 @@ input[type="submit"] {
 input[type="submit"]:hover {
     opacity: 0.7;
     transform: scale(1.05);
+}
+
+/* mobile styles */
+
+@media (max-width: 860px) {
+
+    #home-grid {
+        display: block;
+        border: none;
+        width: 100%;
+    }
+
+    #home-grid div {
+        width: 100%;
+        height: auto;
+    }
+
+    #title {
+        text-align: center;
+        padding: 0;
+    }
+
+    footer {
+        color: white;
+    }
 }

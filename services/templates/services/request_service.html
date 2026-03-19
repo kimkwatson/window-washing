@@ -8,10 +8,12 @@
 <body>
     <main>
 
-        <h1>Window Washing Service</h1>
-        <h2>Please fill out the information below to request a service</h2>
+        <div id="request-title">
+            <h1>Window Washing Service</h1>
+            <h2>Please fill out the information below to request a service</h2>
+        </div>
         
-        <div>
+        <div id="request-form-container">
             <form id="request-form" method="POST">
                 {% csrf_token %}
                 {{ form.non_field_errors }}

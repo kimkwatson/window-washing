@@ -24,11 +24,11 @@ class ServiceRequestAdmin(admin.ModelAdmin):
     
     customer_name.short_description = "Customer"
 
-    list_display = ("customer_name", "city", "windows", "service", "day", "completed", "created_at")
-    list_editable = ("completed",)
+    list_display = ("customer_name", "city", "windows", "service", "day", "completed", "paid", "created_at")
+    list_editable = ("completed", "paid")
     ordering = ("-created_at",)
     search_fields = ("name", "city")
-    list_filter = (CompletionFilter, "service", "day")
+    list_filter = (CompletionFilter, "service", "day", "paid")
 
 admin.site.register(ServiceRequest, ServiceRequestAdmin)
 

@@ -26,6 +26,8 @@ class ServiceRequest(models.Model):
     notes = models.TextField(blank=True)
     
     completed = models.BooleanField(default=False)
+    
+    paid = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

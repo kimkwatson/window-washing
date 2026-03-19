@@ -6,10 +6,32 @@
     <link rel="stylesheet" href="{% static 'services/styles.css' %}">
 </head>
 <body>
-    <h1>Window Washing Service Request</h1>
-    <p>Submit a request for residential window cleaning services.</p>
-
-    <p><a href="{% url 'request_service' %}">Request Service</a></p>
-    
+    <main>
+        <section id="home-grid">
+            <div id="title">
+                <h1>Window Washing Service Request</h1>
+                <p>Submit a request for residential window cleaning services.</p>
+                <p><a href="{% url 'request_service' %}">Request Service</a></p>
+            </div>
+            <div id="services">
+                <ul>
+                    <li>Interior window cleaning</li>
+                    <li>Exterior window cleaning</li>
+                    <li>Screen cleaning and repair</li>
+                    <li>Track and sill deep cleaning</li>
+                    <li>Hard water stain removal</li>
+                    <li>Post-construction window cleanup</li>
+                    <li>Seasonal or routine maintenance plans</li>
+                </ul>
+            </div>
+            <div id="pic1" class="pic"><img src="{% static 'services/images/squeegie.webp' %}"></div>
+            <div id="pic2" class="pic"><img src="{% static 'services/images/sponge.jpg' %}"></div>
+            <div id="pic3" class="pic"><img src="{% static 'services/images/sun-window.webp' %}"></div>
+            <div id="pic4" class="pic"><img src="{% static 'services/images/mop.jpeg' %}"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy 2026 | Kim Watson | Window Washing Service | Django/Python</p>
+    </footer>
 </body>
 </html>

@@ -12,6 +12,11 @@ class ServiceRequestForm(forms.Form):
     state = forms.CharField(label="State", max_length=20)
     zip = forms.CharField(label="ZIP code", max_length=10)
 
+    stories = forms.ChoiceField(
+        choices=[(1, "1"), (2, "2")],
+        widget=forms.RadioSelect
+    
+    )
     windows = forms.IntegerField(label="Number of windows", min_value=5, max_value=50)
 
     SERVICE_CHOICES = [

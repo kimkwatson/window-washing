@@ -12,7 +12,7 @@ def request_service(request):
         if form.is_valid():
             data = form.cleaned_data
 
-            ServiceRequest.objects.create(
+            saved_request = ServiceRequest.objects.create(
                 fname=data['fname'],
                 lname=data['lname'],
                 email=data['email'],
@@ -21,13 +21,14 @@ def request_service(request):
                 city=data['city'],
                 state=data['state'],
                 zip=data['zip'],
+                stories=data['stories'],
                 windows=data['windows'],
                 service=data['service'],
                 day=data['day'],
                 notes=data['notes'],
             )
             
-            return render(request, 'services/confirmation.html', {'data': data})
+            return render(request, 'services/confirmation.html', {'data': saved_request})
     else:
         form = ServiceRequestForm()
 

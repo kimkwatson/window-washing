@@ -11,6 +11,8 @@ class ServiceRequest(models.Model):
     state = models.CharField(max_length=20)
     zip = models.CharField(max_length=10)
 
+    stories = models.IntegerField()
+
     windows = models.IntegerField()
 
     SERVICE_CHOICES = [
@@ -19,7 +21,7 @@ class ServiceRequest(models.Model):
         ("both", "Inside & Outside"),
     ]
 
-    service = models.CharField(max_length=10, choices=SERVICE_CHOICES)
+    service = models.CharField(max_length=20, choices=SERVICE_CHOICES)
 
     day = models.DateField()
 

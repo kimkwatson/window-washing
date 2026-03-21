@@ -38,9 +38,20 @@
                         <input id="state" type="text" id="state" name="state" placeholder="state" autocomplete="address-level1">
                         <input id="zip" type="text" id="zip" name="zip" placeholder="zip code" autocomplete="postal-code">
                     </div>
+                <label>Number of stories:</label>
+                {{ form.stories.errors }}
+                    <div class="radio-group">
+                        <input type="radio" id="stories_1" name="stories" value="1">
+                        <label for="stories_1">1</label>
+
+                        <input type="radio" id="stories_2" name="stories" value="2">
+                        <label for="stories_2">2</label>
+                    </div>
+                
+                {{ form.windows.errors }}
                 <label for="windows">Number of windows: </label><span id="window-count">10</span>
                 <input type="range" id="windows" name="windows" min="5" max="50" value="10">
-                <label>Service:</label>
+                <label>Window service:</label>
                 {{ form.service.errors }}
                     <div class="radio-group">
                         <input type="radio" id="inside" name="service" value="inside">

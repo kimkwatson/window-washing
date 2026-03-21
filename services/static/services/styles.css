@@ -156,19 +156,21 @@ select {
 
 #window-count {
     font-family: "Open Sans", sans-serif;
-    align-self: center;
+    padding-left: 1.5rem;
+    font-weight: 600;
 }
 
 input[type="range"] {
     appearance: none;
     background: transparent;
+    border: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 18px;
     height: 18px;
-    background: #666;
+    background: #444;
     border-radius: 50%;
     cursor: pointer;
     margin-top: -6px;
@@ -211,9 +213,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 .radio-group {
     display: flex;
     gap: 8px;
-    align-items: center;
     flex-wrap: wrap;
-    align-self: center;
 }
 
 input[type="submit"] {
@@ -222,16 +222,31 @@ input[type="submit"] {
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     align-self: center;
     width: 95%;
-    transition: opacity 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
 }
 
 input[type="submit"]:hover {
-    opacity: 0.7;
-    transform: scale(1.01);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#confirmation-message {
+    justify-content: left;
+    justify-self: center;
+    padding-top: 2rem;
+}
+
+#confirmation-message a {
+    padding: 0;
+}
+
+#confirmation-message a:hover {
+    filter: brightness(1.5);
 }
 
 /* mobile styles */
@@ -292,6 +307,10 @@ input[type="submit"]:hover {
     input[type="range"] {
         width: 100%;
         max-width: 100%;
+    }
+
+    #confirmation-message {
+        padding: 2rem;
     }
 
     #back-home {

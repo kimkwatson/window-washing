@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="{% static 'services/styles.css' %}">
 </head>
 <body>
+    <div id="confirmation-message">
+        <h1>Request Submitted</h1>
 
-    <h1>Request Submitted</h1>
+        <p>Thank you, {{ data.fname }}. Your service request has been received. <br>We will contact you shortly for confirmation of service.</p><br>
 
-    <p>Thank you, {{ data.fname }}. Your service request has been received. A confirmation email has been sent.</p>
+        <p><strong>Window service:</strong> {{ data.get_service_display }}</p>
+        <p><strong>Number of stories:</strong> {{ data.stories }}</p>
+        <p><strong>Number of windows:</strong> {{ data.windows }}</p>
+        <p><strong>Preferred date:</strong> {{ data.day }}</p>
+        <p><strong>Email:</strong> {{ data.email }}</p>
+        <p><strong>Phone:</strong> {{ data.phone }}</p>
 
-    <p><strong>Service:</strong> {{ data.service }}</p>
-    <p><strong>Number of windows:</strong> {{ data.windows }}</p>
-    <p><strong>Preferred date:</strong> {{ data.day }}</p>
-    <p><strong>Email:</strong> {{ data.email }}</p>
-
-    <p><a href="{% url 'home' %}">Return to Home</a></p>
-
+        <p><a href="{% url 'home' %}">Return to Home</a></p>
+    </div>
 </body>
 </html>

@@ -11,6 +11,7 @@ body {
 
 main {
     justify-items: center;
+    align-items: center;
 }
 
 #home-grid {
@@ -233,6 +234,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
 }
 
 #confirmation-message {
@@ -247,6 +249,14 @@ input[type="submit"]:hover {
 
 #confirmation-message a:hover {
     filter: brightness(1.5);
+}
+
+#back-home {
+    transition: all 0.2s ease;
+}
+
+#back-home:hover {
+    opacity: 0.8;
 }
 
 /* mobile styles */

@@ -36,7 +36,7 @@ class ServiceRequestAdmin(admin.ModelAdmin):
     # order records by newest first
     ordering = ("-created_at",)
     # search bar fields
-    search_fields = ("name", "city")
+    search_fields = ("fname", "lname", "city")
     # filters shown in sidebar
     list_filter = (CompletionFilter, "service", "day", "paid")
 
